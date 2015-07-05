@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ilangorajagopal/masteringmean",
   "dependencies": {
-    "connect": "^3.4.0"
+    "connect": "^3.4.0",
+    "express": "^4.13.0"
   }
 }

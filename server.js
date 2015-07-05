@@ -10,28 +10,43 @@
 //
 // console.log('Server listening at 127.0.0.1 port 3000');
 
-var connect = require('connect');
-var app = connect();
+//Connect framework
+// var connect = require('connect');
+// var app = connect();
+//
+// var logger = function(req, res, next) {
+//     console.log(req.method, req.url);
+//     next();
+// };
+//
+// var helloNode = function(req, res, next) {
+//     res.setHeader('Content-Type', 'text/plain');
+//     res.end('Hello Node World');
+// };
+//
+// var goodBye = function(req, res, next) {
+//     res.setHeader('Content-Type', 'text/plain');
+//     res.end('Good Bye');
+// };
+//
+// app.use(logger);
+// app.use('/hello', helloNode);
+// app.use('/goodbye', goodBye);
+//
+// app.listen(3000);
+//
+// console.log('Server listening at 127.0.0.1 port 3000');
 
-var logger = function(req, res, next) {
-    console.log(req.method, req.url);
-    next();
-};
 
-var helloNode = function(req, res, next) {
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello Node World');
-};
+//Express framework
+var express = require('express');
+var app = express();
 
-var goodBye = function(req, res, next) {
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Good Bye');
-};
-
-app.use(logger);
-app.use('/hello', helloNode);
-app.use('/goodbye', goodBye);
+app.use('/', function(req, res) {
+    res.send('Hello Express World');
+});
 
 app.listen(3000);
-
 console.log('Server listening at 127.0.0.1 port 3000');
+
+module.exports = app;
